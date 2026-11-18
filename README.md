@@ -758,7 +758,7 @@ bip39scan.vcxproj<br>
 bip39scan.vcxproj.filters
 ..
 
-<img width="987" height="750" alt="Image" src="https://github.com/user-attachments/assets/4e7d7095-3842-4538-b1d4-2d6e9f2ebc43" />
+<img width="1774" height="1415" alt="mnemonic" src="https://github.com/user-attachments/assets/b9b448a5-9b4e-4dbf-8946-cca53809edaa" />
 
 OpenSSL should be found. If now, rename c:\program files\OpenSSL-Win64 to OpenSSL and re-run.<br>
 Note that the libcrypto dll should<br>
