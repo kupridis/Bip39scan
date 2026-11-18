@@ -88,8 +88,6 @@ Ex. ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pa
 The program reads everything from the file: phrases, passwords, passphrases, words, numbers...<br>
 There are many finds on them. Supports dictionaries up to 64 TB.
 
-https://github.com/user-attachments/assets/b981b17f-db42-41a7-adb8-3b6dc7d73803
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt```
 
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt```
