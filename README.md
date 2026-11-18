@@ -22,14 +22,11 @@ For Linux (Ubuntu, hiveos) <br>
 The commands are the same as for Windows.<br>
 You need to add in patch \ before '<br>
 ```chmod +x bip39scan```<br>
-```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...```
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt "\*" hello prepare "\*" "\*" zoo "\*"...```
 
 # MODES:
 
 ## 1. Sequential search words:
-Replace unknown words with \*<br>
-Standard random 2048 words in positions with \*<br>
-For Linux (Ubuntu) "\*" hello prepare "\*" "\*" zoo "\*"  
 
 Test: 3 missing words<br>
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt fortune casual viable priority prepare purpose * outside piece seminar glimpse champion minute together obvious * digital strategy noble link * forest wheel system```
@@ -47,41 +44,23 @@ Test: 6 missing words<br>
 <hr>
 
 ## 2. Random search words:
+Test random: 3 missing words use ```-r``` (default standart 2048 words)<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r holiday gentle other super innocent style twelve uncover fitness total mechanic clutch reunion language festival license * response connect * room derive * buzz```
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic```
+<img width="1605" height="776" alt="Mode_2_1" src="https://github.com/user-attachments/assets/8d5b6d50-a36d-4f5e-a318-09c616e5fd45" />
 
+Test random: 6 missing words ```-w my_words_list.txt```<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w my_words_list.txt -r holiday gentle other * innocent style twelve uncover fitness total * clutch reunion * festival license * response connect * room derive * buzz```
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic```
-
-
-https://github.com/user-attachments/assets/2d9d24c7-8844-4de4-9e5d-7eba976d021e
-
-Replace unknown words with \*<br>
-Standard random 2048 words in positions with \*<br>
-For Linux (Ubuntu) -r "\*" word "\*" zoo   
-
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *```
-
-
-```bip39scan.exe -a hex160.bin -t HEX --bloom 20482M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *```
-
-
-Random using your list of mnemonic words from the file words.txt
-
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *```
-
-
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *```
-
+<img width="1611" height="691" alt="Mode_2_2" src="https://github.com/user-attachments/assets/fca1ef69-81e4-4482-aab5-dad4ccfc616d" />
 
 For full random, add only stars<br>
 Read the question and answer at the bottom of the page<br>
 For Linux (Ubuntu) -r "\*" "\*" "\*" "\*" <br>
-Ex. ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"```
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"```
 
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
 <hr>
 
 ## 3. Reading phrases and passwords from a text file
