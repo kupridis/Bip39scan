@@ -315,15 +315,9 @@ Use multipatch ```--pp listpathes.txt```
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --hmac1 passwords.txt --iterations 50000```
 
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --hmac1 passwords.txt --iterations 50000```
-
-
 #### Receiving passwords from an external generator
 
 ```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --hmac1 stdin --iterations 50000```
-
-
-```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --hmac1 stdin --iterations 50000```
 
 
 Example FOUNDS:
