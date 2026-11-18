@@ -456,53 +456,12 @@ ALL ETH + ALL TOKENS + ALL BTC + history = 2.775.909.490 addresses<br>
 Doesn't start on 12 GB cards!!! The database fits on a 16 GB card or more!!! <br>
 To run you need 52 GB of RAM <br>
 Add these arguments to run --bloom 8192M -t HEX<br>
-Download http://95.215.108.160/up/allcoins.bin  53 GB
-
-TRON TRX + history = 150M addresses<br>
-Add these arguments to run --bloom 2048M -t HEX<br>
-Download http://95.215.108.160/up/tron.bin  3 GB
-
-ALL ETH 1458757703 addresses with balance 09/07/2025 + empty + ALL ETH TOKENS with balance 09/07/2025 + empty history:<br>
-ARBITRUM, AVALANCHE, BASE, BNB, BSC, BTT, CRONOS, CELO, ETC, Ethereumnie, ERA, ERC20, ETH, Ethered, FANTOM, <br>
-GETH (Goerli), GNOSIS, IOTX, LINEA, MOONBEAM, MOONRIVER, OPBNB, OPTIMISM, POLYGON, VET, ZKEVM-POLYGON...<br>
-Doesn't start on 8 GB cards! The database fits on a 12 GB card or more. <br>
-To run you need 32 GB of RAM (if you don't have that much, you can use the swap file) <br>
-Add these arguments to run --bloom 4096M -t ethereum<br>
-Download http://95.215.108.160/up/alleth.bin  29 GB
+Download http://95.215.108.160/up/allcoins.bin  (53 GB)
 
 ALL BTC addresses 1... P2PKH with balance + empty (history)<br>
-Add these arguments to run --bloom 2048M -t P2PKH<br>
-Download http://95.215.108.160/up/allbtc1.bin  11.9 GB
+Add these arguments to run --bloom 4096M -t P2PKH<br>
+Download http://95.215.108.160/up/allbtc1.bin (11.9 GB)
 
-ALL BTC addresses 3... P2SH with balance + empty (history)<br>
-Add these arguments to run --bloom 2048M -t P2SH<br>
-Download http://95.215.108.160/up/allbtc3.bin  7.6 GB
-
-ALL BTC addresses bc1q... bech32 with balance + empty (history)<br>
-Add these arguments to run --bloom 2048M -t bech32<br>
-Download http://95.215.108.160/up/allbc.bin  6.5 GB
-
-## Addresses only with positive balance
-
-Download ETH + BTC 1.., 3.., bc... from $1 (up 01.11.2025)<br>
--a hex160.bin -t HEX<br>
-http://95.215.108.160/up/hex160.bin  2.6 GB
-
-Download BTC addresses 1... 30/06/2025<br>
-http://95.215.108.160/up/btc1.txt  787 MB
-
-Download BTC addresses 3... 30/06/2025<br>
-http://95.215.108.160/up/btc3.txt 240 MB
-
-Download BTC addresses bc... 30/06/2025<br>
-http://95.215.108.160/up/bc.txt 842 MB
-
-I recommend using large address bases.<br>
-For example, BCH may remain on the historical address 1... (P2PKH)
-
-Launching the program with a text database of addresses.<br>
-Each address must be on a new line!<br>
-The text address base is well suited for quick tests
 
 ```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 --bits 256```<br>
 ```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH -p m/49'/0'/0'/0/0-9 --bits 256```<br>
@@ -559,7 +518,7 @@ The program has 65536 threads, while 50 threads processed your list, other threa
 
 **What is the difference between --hmac and --hmac1 in mode 10?**
 
-``--hmac`` checks addresses in each password iteration.<br>
+```--hmac``` checks addresses in each password iteration.<br>
 You specified 50,000 iterations.<br>
 The program takes 1,000,000 passwords<br>
 It will check the seed in the first iteration, in the second ... the 50,000th.
@@ -568,7 +527,7 @@ In total, for one password it will generate 50k seeds with address checking.<br>
 It needs to check 1,000,000 x 50,000 = 50,000,000,000 seeds.<br>
 Your speed is 5M - you need 2 hours 45 minutes to check
 
-``--hmac1`` checks addresses only in the specified iteration.<br>
+```--hmac1``` checks addresses only in the specified iteration.<br>
 It takes 1,000,000 passwords, makes iterations and does not check the seed until the specified one.<br>
 Your speed is 60k<br>
 1000000/60000 = it will take you 15 seconds to check<hr>
@@ -661,11 +620,6 @@ Most likely you did not specify the memory size for the filter.<br>
 Base.bin 7 GB+ specify --bloom 2048M<br>
 Base.bin 20 GB+ specify --bloom 4096M<br>
 Base.bin 50 GB+ specify --bloom 8192M<hr>
-
-**Where can I make a mnemonic from a password?**
-
-Online generator http://95.215.108.160<br>
-Bookmark this<hr>
 
 **What is precomp.bin?**
 
