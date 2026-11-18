@@ -1,4 +1,4 @@
-## bip39scan - New reliase v 9.9.1 (19/11/2026)
+## bip39scan v 7.7.7
 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀
 
 The program is sold with the source code! cmake Visual Studio 2022 or Linux<br>
@@ -29,21 +29,21 @@ You need to add in patch \ before '<br>
 ## 1. Sequential search words:
 Replace unknown words with \*<br>
 Standard random 2048 words in positions with \*<br>
-For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"  
+For Linux (Ubuntu) "\*" hello prepare "\*" "\*" zoo "\*"  
 
+Test: 3 missing words<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt fortune casual viable priority prepare purpose * outside piece seminar glimpse champion minute together obvious * digital strategy noble link * forest wheel system```
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic```
+<img width="1609" height="559" alt="Mode_1_test" src="https://github.com/user-attachments/assets/a2df0bc0-17ad-47d3-8f3a-130e9d84f886" />
 
-In the phrase, 3 missing words in different positions are replaced by * (test address 14aZB9i8NFiXpeGbS3g7vLArhL7EbNBSWS)
-
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *```
-
-
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *```
-
-
-You can use your own list of words from a text file for searching. Only words from the [2048 mnemonic words](https://github.com/phrutis/bip39scan/blob/main/bip39.txt) are supported.<br>
+You can use your own list of words from a text file for searching. Only words from the [2048 mnemonic words](https://github.com/cupridis/bip39scan/blob/main/bip39.txt) are supported.<br>
 Words in the file must be on a new line. To add a specified list, use -w words.txt Replace unknown words with *
+
+Test: 6 missing words<br>
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w my_words_list.txt fortune casual viable priority * purpose * outside piece seminar glimpse champion minute together obvious * digital strategy * link * forest wheel *```
+
+<img width="1613" height="611" alt="Mode_1_2_test" src="https://github.com/user-attachments/assets/69c369e8-7eae-4626-bdd5-c0384e16c3bc" />
+
 <hr>
 
 ## 2. Random search words:
