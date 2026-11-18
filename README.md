@@ -1,4 +1,4 @@
-## bip39scan - New reliase v 9.9.2 (19/11/2026)
+## bip39scan - New reliase v 9.9.1 (19/11/2026)
 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀
 
 The program is sold with the source code! cmake Visual Studio 2022 or Linux<br>
@@ -665,7 +665,7 @@ The program searches for 160 hashes from addresses, you can add 160 hashes from 
 
 ```
 bip39scan.exe -h
-bip39scan v9.9.2 (phrutis modification 19/11/2026) t.me/cuda8
+bip39scan v9.9.1 (phrutis modification 19/11/2026) t.me/cuda8
 Bruteforce bip39 mnemonics
 Syntax: bip39scan [OPTIONS] [MNEMO]
 OPTIONS:
@@ -739,10 +739,11 @@ Or find another version on this page: https://cmake.org/download/
 Install Visual Studio 2022 community: https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022<br>
 click the big Download button
  
-Install Nvidia CUDA 12.9: https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local<br>
-choose Windows version
+Install Nvidia CUDA 13.3: https://developer.nvidia.com/cuda-13-3-0-download-archive<br>
+choose Windows version, exe(local), install...
  
-Install OpenSSL from https://slproweb.com/download/Win64OpenSSL-3_6_0.exe
+Install OpenSSL from [https://slproweb.com/download/Win64OpenSSL-3_6_0.exe](https://slproweb.com/products/Win32OpenSSL.html)
+Win64 OpenSSL v4.1.0 EXE | MSI or a newer version
 
 Go to the "Sources" folder
 In cmd run: 
