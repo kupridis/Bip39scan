@@ -22,7 +22,7 @@ For Linux (Ubuntu, hiveos) <br>
 The commands are the same as for Windows.<br>
 You need to add in patch \ before '<br>
 chmod +x bip39scan<br>
-./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...```
 
 # MODES:
 
@@ -32,17 +32,17 @@ Standard random 2048 words in positions with \*<br>
 For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"  
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt uncover figure script * obscure waste metal quit depend bachelor trust erupt * impose brave leave number rapid oak wealth reopen * noodle tragic```
 
 In the phrase, 3 missing words in different positions are replaced by * (test address 14aZB9i8NFiXpeGbS3g7vLArhL7EbNBSWS)
 
 Video https://github.com/user-attachments/assets/e8d4535c-ea78-410f-8ec9-2608847ce975
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *```
 
 
 You can use your own list of words from a text file for searching. Only words from the [2048 mnemonic words](https://github.com/phrutis/bip39scan/blob/main/bip39.txt) are supported.<br>
@@ -51,10 +51,10 @@ Words in the file must be on a new line. To add a specified list, use -w words.t
 
 ## 2. Random search words:
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic```
 
 
 https://github.com/user-attachments/assets/2d9d24c7-8844-4de4-9e5d-7eba976d021e
@@ -63,32 +63,32 @@ Replace unknown words with \*<br>
 Standard random 2048 words in positions with \*<br>
 For Linux (Ubuntu) -r "\*" word "\*" zoo   
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 20482M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a hex160.bin -t HEX --bloom 20482M --save Found.txt --pp pathslist.txt -r cause * shield option monkey infant tray okay remember * * *```
 
 
 Random using your list of mnemonic words from the file words.txt
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -w words.txt -r cause * shield option monkey infant tray okay remember * * *```
 
 
 For full random, add only stars<br>
 Read the question and answer at the bottom of the page<br>
 For Linux (Ubuntu) -r "\*" "\*" "\*" "\*" <br>
-Ex. ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"
+Ex. ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"```
 
 ![Image](https://github.com/user-attachments/assets/18393117-eaff-4a81-9eac-46d327207903)
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
 
 <hr>
 
@@ -99,10 +99,10 @@ There are many finds on them. Supports dictionaries up to 64 TB.
 https://github.com/user-attachments/assets/b981b17f-db42-41a7-adb8-3b6dc7d73803
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt```
 <hr>
 
 ## 4. Reading phrases and passwords as a stream from an external generator
@@ -110,10 +110,10 @@ bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist
 https://github.com/user-attachments/assets/5d930d3d-4224-4316-8f8f-87a721e21ec8
 
 
-hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin
+```hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin```
 
 
-py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin
+```py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin```
 <hr>
 
 ## 5. Reading entropy from a text file
@@ -122,29 +122,29 @@ Depending on the length of the hash, a phrase is created.
 
 Phrase Languages<br>
 If not specified, the default will be en<br>
--l en English<br>
--l es Spanish<br>
--l fr French<br>
--l it Italian<br>
--l ja Japanese<br>
--l cs Czech<br>
--l ru Russian<br>
--l uk Ukrainian<br>
--l ko Korean<br>
--l po Portuguese<br>
--l tu Turkish<br>
--l zh_Hans Chinese (Simplified)<br>
--l zh_Hant Chinese (Traditional)
+```-l en``` English<br>
+```-l es``` Spanish<br>
+```-l fr``` French<br>
+```-l it``` Italian<br>
+```-l ja``` Japanese<br>
+```-l cs``` Czech<br>
+```-l ru``` Russian<br>
+```-l uk``` Ukrainian<br>
+```-l ko``` Korean<br>
+```-l po``` Portuguese<br>
+```-l tu``` Turkish<br>
+```-l zh_Hans``` Chinese (Simplified)<br>
+```-l zh_Hant``` Chinese (Traditional)
 
 Special lang word NFKD (Normalization Form KD):<br>
--l ja-nfkd Japanese<br>
--l es-nfkd Spanish
+```-l ja-nfkd``` Japanese<br>
+```-l es-nfkd``` Spanish
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt```
 <hr>
 
 ## 6. Reading entropy stream from external generator
@@ -156,32 +156,32 @@ The program will determine the length of the hex and create a phrase of the requ
 
 Phrase Languages<br>
 If not specified, the default will be en<br>
--l en English<br>
--l es Spanish<br>
--l fr French<br>
--l it Italian<br>
--l ja Japanese<br>
--l cs Czech<br>
--l ru Russian<br>
--l uk Ukrainian<br>
--l ko Korean<br>
--l po Portuguese<br>
--l tu Turkish<br>
--l zh_Hans Chinese (Simplified)<br>
--l zh_Hant Chinese (Traditional)
+```-l en``` English<br>
+```-l es``` Spanish<br>
+```-l fr``` French<br>
+```-l it``` Italian<br>
+```-l ja``` Japanese<br>
+```-l cs``` Czech<br>
+```-l ru``` Russian<br>
+```-l uk``` Ukrainian<br>
+```-l ko``` Korean<br>
+```-l po``` Portuguese<br>
+```-l tu``` Turkish<br>
+```-l zh_Hans``` Chinese (Simplified)<br>
+```-l zh_Hant``` Chinese (Traditional)
 
 Special lang word NFKD (Normalization Form KD):<br>
--l ja-nfkd Japanese<br>
--l es-nfkd Spanish
+```-l ja-nfkd``` Japanese<br>
+```-l es-nfkd``` Spanish
 
 
 https://github.com/user-attachments/assets/df8a0774-307a-46e0-ac01-b9123aad5c50
 
 
-py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e stdin
+```py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e stdin```
 
 
-py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin
+```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin```
 <hr>
 
 ## 7. Use the built-in generator passwords
@@ -198,10 +198,10 @@ The generator works with an increment increasing the password length.
 https://github.com/user-attachments/assets/d0fc2faa-b0bb-4f7b-8c4e-575972a0cb26
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
 
 
 https://github.com/user-attachments/assets/313156e0-d82e-499d-a5c0-644e067d76cd
@@ -250,13 +250,13 @@ Every 5 minutes the depth position is saved to the file checkpoint.txt<br>
 To continue, use the argument --depth 123 (value from the file checkpoint.txt)
 
 Length of phrases<br>
---bits 64 (random phrase 6 words)<br>
---bits 96 (random phrase 9 words)<br>
---bits 128 (random phrase 12 words)<br>
---bits 160 (random phrase 15 words)<br>
---bits 192 (random phrase 18 words)<br>
---bits 224 (random phrase 21 words)<br>
---bits 256 (random phrase 24 words)<br>
+```--bits 64``` (random phrase 6 words)<br>
+```--bits 96``` (random phrase 9 words)<br>
+```--bits 128``` (random phrase 12 words)<br>
+```--bits 160``` (random phrase 15 words)<br>
+```--bits 192``` (random phrase 18 words)<br>
+```--bits 224``` (random phrase 21 words)<br>
+```--bits 256``` (random phrase 24 words)<br>
 
 
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256
@@ -267,33 +267,33 @@ bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist
 
 Phrase Languages<br>
 If not specified, the default will be en<br>
--l en English<br>
--l es Spanish<br>
--l fr French<br>
--l it Italian<br>
--l ja Japanese<br>
--l cs Czech<br>
--l ru Russian<br>
--l uk Ukrainian<br>
--l ko Korean<br>
--l po Portuguese<br>
--l tu Turkish<br>
--l zh_Hans Chinese (Simplified)<br>
--l zh_Hant Chinese (Traditional)
+```-l en``` English<br>
+```-l es``` Spanish<br>
+```-l fr``` French<br>
+```-l it``` Italian<br>
+```-l ja``` Japanese<br>
+```-l cs``` Czech<br>
+```-l ru``` Russian<br>
+```-l uk``` Ukrainian<br>
+```-l ko``` Korean<br>
+```-l po``` Portuguese<br>
+```-l tu``` Turkish<br>
+```-l zh_Hans``` Chinese (Simplified)<br>
+```-l zh_Hant``` Chinese (Traditional)
 
 Special lang word NFKD (Normalization Form KD):<br>
--l ja-nfkd Japanese<br>
--l es-nfkd Spanish
+```-l ja-nfkd``` Japanese<br>
+```-l es-nfkd``` Spanish
 
 <img width="978" height="325" alt="Image" src="https://github.com/user-attachments/assets/c3afa204-81df-49a4-9f7f-8b5e17bbdbad" />
 
 <img width="976" height="370" alt="Image" src="https://github.com/user-attachments/assets/e787746a-1646-428c-9865-d62ff85baf66" />
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 192 -l tu
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 192 -l tu```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it```
 <hr>
 
 ## 9. BIP32
@@ -325,19 +325,19 @@ m/0'/0'/0-5'
 Reading entropy from file
 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core entropy.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core entropy.txt```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core entropy.txt
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core entropy.txt```
 
 
 
 Receiving entropy from an external generator
 
-py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core stdin
+```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core stdin```
 
 
-py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core stdin
+```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core stdin```
 
 
 Example founds:
@@ -373,22 +373,22 @@ m/0-9<br>
 m/0-1'/0-9<br>
 m/0-1'/0-3/0-9
 
-Use multipatch --pp listpathes.txt
+Use multipatch ```--pp listpathes.txt```
 
  ## Reading passwords from file
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000```
 
 
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000```
 
 
 #### Receiving passwords from an external generator
 
-py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000
+```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000```
 
 
-py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000
+```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000```
 
 
 Example FOUNDS:
@@ -416,19 +416,19 @@ In fact, the password is appended to the "mnemonic" salt.
 ### Passphrases search supports the following modes:
 
 Mode 3 - Reading seed phrases from a text file (Many finds)<br>
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m phrases.txt --pass passwords.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m phrases.txt --pass passwords.txt```
 
 Mode 4 - Reading phrases as a stream from an external generator<br>
-py gen_phrases.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin --pass passwords.txt
+```py gen_phrases.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin --pass passwords.txt```
 
 Mode 5 - Reading entropy from a text file<br>
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt --pass passwords.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt --pass passwords.txt```
 
 Mode 6 - Reading entropy stream from external generator<br>
-py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin --pass passwords.txt
+```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin --pass passwords.txt```
 
 Mode 8 - Vulnerable generator libbitcoin explorer v3.2<br>
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256 --pass passwords.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256 --pass passwords.txt```
 
 Example FOUNDS:
 
@@ -442,9 +442,9 @@ Example FOUNDS:
 
 ## 12. Electrum
 
-bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v1.txt -p m/0-1/0-9 --legacy-electrum -m ELECTRUM_OLD_phrases.txt
+```bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v1.txt -p m/0-1/0-9 --legacy-electrum -m ELECTRUM_OLD_phrases.txt```
 
-bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v2.txt -p m/0-1'/0/0-9 --electrum -m ELECTRUM_phrases.txt
+```bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v2.txt -p m/0-1'/0/0-9 --electrum -m ELECTRUM_phrases.txt```
 
 <hr>
 
@@ -455,16 +455,16 @@ Solana: два режима. обычный bip32 режим (современн
 TON: тоже два режима. Первый - tonlib, стандартная тоновская деривация, которая не bip39 и не bip32. <br>
 Путей там нет, поэтому этот режим включается отдельным флагом --tonlib: 
 
-bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib
+```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib```
 
-bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib --pass pwd.txt
+```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib --pass pwd.txt```
 
 Второй режим - ed25519 деривация с bip39/bip32, которая есть в некоторых кошельках, например trezor и ledger. <br>
 Этот режим включается опцией -t ton, например:
 
-bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt
+```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt```
 
-bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt --pass pwd.txt
+```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt --pass pwd.txt```
 
 где paths.txt содержит например:<br>
 m/44'/607'/0'/0-10'/0-10'<br>
@@ -479,7 +479,7 @@ m/0-1'
 
 ## 14. Permutation
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --pp paths.txt --permute -m phrases.txt
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --pp paths.txt --permute -m phrases.txt```
 
 Mnemonics must contain valid BIP39 words, otherwise there will be an error.
 
@@ -540,10 +540,10 @@ Launching the program with a text database of addresses.<br>
 Each address must be on a new line!<br>
 The text address base is well suited for quick tests
 
-bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 --bits 256<br>
-bip39scan.exe --save Found.txt -a btc3.txt -t P2SH -p m/49'/0'/0'/0/0-9 --bits 256<br>
-bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 -p m/84'/0'/0'/0/0-9 --bits 256<br>
-bip39scan.exe --save Found.txt -a eth_addresses.txt-t ethereum -p m/44'/60'/0'/0/0-9 --bits 256
+```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH -p m/49'/0'/0'/0/0-9 --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 -p m/84'/0'/0'/0/0-9 --bits 256```<br>
+```bip39scan.exe --save Found.txt -a eth_addresses.txt-t ethereum -p m/44'/60'/0'/0/0-9 --bits 256```
 
 ## Create your own .bin database from addresses
 
@@ -552,9 +552,9 @@ Create and use binary databases.<br>
 The program will start in seconds<br>
 Create databases:
 BTC<br>
-bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH --save-bin btc1.bin --bloom 2048M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a btc3.txt -t P2SH --save-bin btc3.bin --bloom 2048M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 --save-bin bc.bin --bloom 2048M --pp pathslist.txt --bits 256<br>
+```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH --save-bin btc1.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH --save-bin btc3.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 --save-bin bc.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
 
 ETH and tokens<br>
 bip39scan.exe --save Found.txt -a eth_addresses.txt --save-bin eth.bin -t ethereum --bloom 4096M --pp pathslist.txt --bits 256
@@ -571,10 +571,10 @@ Next launches run like this! <br>
 bip39scan.exe --save Found.txt -a allcoins.bin -t HEX --bloom 8192M --pp pathslist.txt --bits 256<br>
 bip39scan.exe --save Found.txt -a hex160.bin -t HEX --bloom 2048M --pp pathslist.txt --bits 256
 
-bip39scan.exe --save Found.txt -a btc1.bin -t P2PKH --bloom 2048M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a btc3.bin -t P2SH --bloom 2048M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a bc.bin -t bech32 --bloom 2048M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a alleth.bin --bloom 4096M -t ethereum --pp pathslist.txt --bits 256
+```bip39scan.exe --save Found.txt -a btc1.bin -t P2PKH --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a btc3.bin -t P2SH --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a bc.bin -t bech32 --bloom 2048M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a alleth.bin --bloom 4096M -t ethereum --pp pathslist.txt --bits 256```
 
 
 Where can I download a fresh database of addresses?<br>
@@ -766,7 +766,7 @@ The program searches for 160 hashes from addresses, you can add 160 hashes from 
 bip39scan v9.9.1 (phrutis modification 18/02/2026) t.me/cuda8<br>
 Bruteforce bip39 mnemonics<br>
 Syntax: bip39scan [OPTIONS] [MNEMO]<br>
-OPTIONS:
+OPTIONS:<br>
     -h, --help            Print this message.<br>
     -a, --addresses STR   The name of the address file, each address of a separate line, or a binary<br>
                           file previosly created with --save-bin. Binary files are faster to read.<br>
