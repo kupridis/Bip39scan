@@ -153,7 +153,6 @@ then switched to a more secure generation of pbkdf2_hmac_sha512 2048 iterations.
 The service worked for about a year and closed, the wallets remained.<br>
 live.ether https://github.com/user-attachments/assets/7cba4517-5f2e-4b3a-986a-4cace21cc5fa<br>
 Many finds by generator and passwords from file<br>
-You can see the list of found passwords 7165 pcs. https://github.com/kupridis/bip39scan/blob/main/Founds.md<br>
 In the alpha.txt file, specify your alphabet, numbers, symbols in a line.<br>
 The generator works with an increment increasing the password length.
 
@@ -483,6 +482,10 @@ Ethereum addresses must be 0x...<br>
 Bitcoin addresses 1.., 3.., bc.. (New long addresses bc.. does not accept)
 
 # FAQ
+**Use Bip39scan v7.7.7** <br>
+**For modes 13 and 14, use v9.9.1**
+<hr>
+
 **The program did not find my test password from the file.**
 
 Do not use small dictionaries for the test.<br>
@@ -622,7 +625,7 @@ Or use the HEX type for all coin types<br>
 
 **What does -t HEX look for?**
 
-By specifying this type, you are searching for 5 types of coins at once.
+By specifying this type, you are searching for 5 types of coins at once.<br>
 BTC P2PKH<br>
 BTC P2PKH_Uncompressed<br>
 BTC P2SH<br>
