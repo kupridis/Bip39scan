@@ -550,29 +550,14 @@ Ethereum addresses must be 0x...<br>
 Bitcoin addresses 1.., 3.., bc.. (New long addresses bc.. does not accept)
 
 # FAQ
-The program did not find my test password from the file.
+**The program did not find my test password from the file.**
 
 Do not use small dictionaries for the test.<br>
 The program starts in 3-5 seconds, at a speed of 500k, it can go through your dictionary of 25 phrases in 0.001 sec and finish the work without having time to give the result.<br>
 I recommend using dictionaries from 5 million lines and more.<br>
 The program has 65536 threads, while 50 threads processed your list, other threads (65511 empty) without load finished the program earlier.<hr>
 
-My random finds the same thing!?
-
-In old versions of the program (v2.0.1, v3.2) with each new launch for random, <br>
-you need to additionally specify initialization for the generator.<br>
---seed + 8 random digits.<br>
-Example:<br>
---seed 87659645 -r * * * * * * * * * * * * <br>
---seed 96537996 -r * * * * * * * * * * * * <br>
-If you do not specify the starting seed, the default seed 0 will be used<br>
--r * * * * * * * * * * * * <br>
-You will go through all the time from the beginning (previously passed).
-
-In versions: (4.0.1), (4.1.2), (5.0.1) you do not need to do this!<br>
-The program itself randomizes the starting seed<hr>
-
-What is the difference between --hmac and --hmac1 in mode 10?
+**What is the difference between --hmac and --hmac1 in mode 10?**
 
 ``--hmac`` checks addresses in each password iteration.<br>
 You specified 50,000 iterations.<br>
@@ -596,7 +581,7 @@ https://slproweb.com/download/Win64OpenSSL-3_0_17.msi<br>
 https://aka.ms/vs/17/release/vc_redist.x64.exe
 <hr>
 
-How to check the found HEX160?
+**How to check the found HEX160?**
 
 Example founds:<br>
 c0a95cc48dcfb76f02edf0ff020f8ccc44da576d(ethereum) -> 0xc0a95cc48dcfb76f02edf0ff020f8ccc44da576d<br>
@@ -609,7 +594,7 @@ py gen_address.py or python3 gen_address.py<br>
 Paste the found private key<br>
 <hr>
 
-How do I convert my addresses to 160 hashes?
+**How do I convert my addresses to 160 hashes?**
 
 Use Python addto160.py<br>
 Incoming address file - adr.txt<br>
@@ -618,7 +603,7 @@ Supports BTC addresses 1.., 3.., bc..<br>
 For ETH addresses and tokens, remove the 0x<br>
 <hr>
 
-How to change the derivation in a patch?
+**How to change the derivation in a patch?**
 
 You can set a non-standard patch derivation at your discretion:<br>
 m/0-9<br>
@@ -635,7 +620,7 @@ Tell me patches of different coins
 
 [Full list of patches BIP32, BIP39](https://github.com/phrutis/bip39scan/blob/main/Patches.md)<hr>
 
-How to create a patch file?
+**How to create a patch file?**
 
 Create a text file and rename it, for example, to pathes.txt<br>
 Insert the list of required paths on a new line.<br>
@@ -646,7 +631,7 @@ m/84'/0'/0'/0/0-9<br>
 USE --pp pathes.txt<br>
 <hr>
 
-Why do we need streams, generators?<br>
+**Why do we need streams, generators?** <br>
 How does it work? Show an example.
 
 Most random generators are vulnerable.<br>
@@ -656,7 +641,7 @@ Changing the program for each generator is not rational.<br>
 It's easier to find a phrase by vulnerability than to endlessly brute-force emptiness.<br>
 [Examples of generators](https://github.com/phrutis/bip39scan/blob/main/Generators/README.md)<hr>
 
-I don't understand what entropy is?
+**I don't understand what entropy is?**
 
 [SEE HIRE](https://learnmeabitcoin.com/technical/keys/hd-wallets/mnemonic-seed/)<hr>
 
@@ -667,7 +652,7 @@ For these purposes, find an AI bot.<br>
 Now bots have become very smart, they write programs and scripts.<br>
 Write to the bot what you need to do, spin and how.<hr>
 
-My program won't start - bloom memory error...?
+**My program won't start - bloom memory error...?**
 
 Take a screenshot of the program window and send it to me.
 
@@ -677,12 +662,12 @@ Base.bin 7 GB+ specify --bloom 2048M<br>
 Base.bin 20 GB+ specify --bloom 4096M<br>
 Base.bin 50 GB+ specify --bloom 8192M<hr>
 
-Where can I make a mnemonic from a password?
+**Where can I make a mnemonic from a password?**
 
 Online generator http://95.215.108.160<br>
 Bookmark this<hr>
 
-What is precomp.bin?
+**What is precomp.bin?**
 
 This is a table of acceleration, pre-calculated points of the curve<hr>
 
@@ -698,7 +683,7 @@ Try different modes and directions.<br>
 Search in the one in which you think you have the best chance of finding.<br>
 Finds are found, they are not asked about, and they are not told. When you find one, will you tell everyone?<hr>
 
-How can I search for other coins like Salona?
+**How can I search for other coins like Salona?**
 
 Create several test addresses.<br>
 Convert addresses to ripemd160 hashes.<br>
@@ -708,7 +693,7 @@ The program will find an empty address BTC 1.... you don't need it.<br>
 Take the phrase, or private key, generate the address of the desired coin<br>
 If you do everything correctly, you will find test addresses<hr>
 
-Why specify -t typecoin ?
+**Why specify -t typecoin ?**
 
 When you search with binary database the program does not know what coin you are looking for.
 BE SURE TO SPECIFY - t typecoin<br>
@@ -716,7 +701,7 @@ Use a specific type: P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum<br>
 Or use the HEX type for all coin types<br>
 <hr>
 
-What does -t HEX look for?
+**What does -t HEX look for?**
 
 By specifying this type, you are searching for 5 types of coins at once.
 BTC P2PKH<br>
@@ -726,74 +711,75 @@ BTC Bech32 p2pkh<br>
 ETH<br>
 The program searches for 160 hashes from addresses, you can add 160 hashes from other coins.<hr>
 
-## bip39scan.exe -h<br>
-bip39scan v9.9.1 (phrutis modification 18/02/2026) t.me/cuda8<br>
-Bruteforce bip39 mnemonics<br>
-Syntax: bip39scan [OPTIONS] [MNEMO]<br>
-OPTIONS:<br>
-    -h, --help            Print this message.<br>
-    -a, --addresses STR   The name of the address file, each address of a separate line, or a binary<br>
-                          file previosly created with --save-bin. Binary files are faster to read.<br>
-        --save-bin STR    The name of the binary file to write, 20 bytes per address. This is in order<br>
-                          to accelerate loading of addresses.<br>
-    -p, --path STR        Use this derivation path template, e.g. m/44'/60'/0-99'/0/0-99<br>
-                          The default is m/44'/coin'/0-9'/0-1/0-9 for p2pkh addresses and ethereum,<br>
-                          m/49'/coin'/0-9'/0-1/0-9 for p2sh addresses,<br>
-                          m/84'/coin'/0-9'/0-1/0-9 for bech32 addresses.<br>
-        --pp FILE         Read derivation paths from the file, one per line. -p and --pp are mutually exclusive.<br>
-    -v, --verbose         Print debug messages.<br>
-    -t, --type STR        Address type, one of P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum, solana, ton<br>
-                          By default, address type is detected from the address file, if it's text.<br>
-                          This options is required when using binary data.<br>
-        --tt STR,STR,...  Comma-separated list of address types to search for in the -t HEX mode.<br>
-                          When -t HEX, the address file contains hexadecimal 160-bit hashes instead of addresses.<br>
-                          Possible values are:<br>
-                              P2PKH: rmd160(sha256(der-encoded compressed pubkey))<br>
-                              P2PKH_UNCOMPRESSED: rmd160(sha256(der-encoded uncompressed pubkey))<br>
-                              P2SH: rmd160(sha256(\x00\x14 . rmd160(sha256(der-encoded compressed pubkey))))<br>
-                              ETHEREUM: keccak(64-byte pubkey, x.y in big-endian), used also by Tron.<br>
-                          Default: check all hash functions.<br>
-    -S, --save FILE       Save found results to the file.<br>
-    -m, --mnemo FILE      Read mnemonics from the file, one per line. -m stdin to read from the input pipe.<br>
-        --alphabet FILE   Generate mnemonics as passwords from the characters of the given file.<br>
-                          Not compatible with --mnemo option.<br>
-        --bits INT        Generate mnemonics using RNG of the libbitcoin explorer 3.2.0. The integer number is the entropy length:<br>
-                          64 - 6 words, 96 - 9 words, 128 - 12 words, 160 - 15 words, 192 - 18 words, 224 - 21 words<br>
-                          256 - 24 words.<br>
-    -e, --entropy FILE    Read entropy from the file in hex, one per line. If FILE is 'stdin', read from input pipe.<br>
-    -l, --lang STR        Language of the mnemonics generated with --bits, one of en, es, es-nfkd, ja, ja-nfkd, it, fr, cs, ru, uk, zh_Hans, <br>zh_Hant, po, ko, tu.<br>
-                          Default is English.<br>
-        --start STR       For generated mnemonics, start from this mnemonic.<br>
-    -d, --devices STR     Comma-separated list of device indexes (indeces start with 0). By default,<br>
-                          run on all devices.<br>
-        --bloom NUM       Bloom filter size in GPU, in bytes. Can use K, M, and G suffixes. Default<br>
-                          is 1024M.<br>
-        --kernel NUL      GPU memory reserved for kernel execution, in bytes. Can use K, M, and G suffixes.<br>
-                          Default depends on the device.<br>
-        --ec-threads NUM  Number of threads for elliptic curve computations. Default is 128. Should be a multiplier of 32.<br>
-                          Set to 64 if you are experiencing out of memory errors.<br>
-    -w, --words FILE      Use custom dictionary for '*' placeholders in the mnemo template; each word in a separate text line.<br>
-                          Each word should be a valid BIP39 word in the specified language (--lang).<br>
-        --dump            Dumps valid mnemonics.<br>
-    -r, --random          Randomize the mnemonics generated with MNEMO templates (see below).<br>
-        --depth NUM       Depth of the random generator to start with. Default is 0 - start generating entoropy right after<br>
-                          the random generator is initialized.<br>
-        --core FILE       Read BIP39 seed from the file, one per line. If FILE is 'stdin', read from input pipe.<br>
-        --hmac FILE       Read passwords from the file, one per line, and use them as HMAC keys to generate BIP39 seeds.<br>
-        --hmac1 FILE      Same as --hmac but doesn't check intermediate iterations.<br>
-        --iterations NUM  In the --hmac mode: number of hmac iterations to perform.<br>
-        --pass FILE       Read passphrases from the file, one per line.<br>
-        --electrum                 Use Electrum's non-standard BIP39 implementation.<br>
-        --legacy-electrum Use Electrum's old mnemonic scheme. Only paths in the form of m/0-9/N are accepted.<br>
-    MNEMO                 Mnemonic template, up to 24 words. Can contain placeholders '*'. If less than<br>
-                          12 words, the rest are placeholders. Each '*' is replaced with one of 2048 words (or one of the words<br>
+```
+bip39scan.exe -h
+bip39scan v9.9.2 (phrutis modification 19/11/2026) t.me/cuda8
+Bruteforce bip39 mnemonics
+Syntax: bip39scan [OPTIONS] [MNEMO]
+OPTIONS:
+    -h, --help            Print this message.
+    -a, --addresses STR   The name of the address file, each address of a separate line, or a binary
+                          file previosly created with --save-bin. Binary files are faster to read.
+        --save-bin STR    The name of the binary file to write, 20 bytes per address. This is in order
+                          to accelerate loading of addresses.
+    -p, --path STR        Use this derivation path template, e.g. m/44'/60'/0-99'/0/0-99
+                          The default is m/44'/coin'/0-9'/0-1/0-9 for p2pkh addresses and ethereum,
+                          m/49'/coin'/0-9'/0-1/0-9 for p2sh addresses,
+                          m/84'/coin'/0-9'/0-1/0-9 for bech32 addresses.
+        --pp FILE         Read derivation paths from the file, one per line. -p and --pp are mutually exclusive.
+    -v, --verbose         Print debug messages.
+    -t, --type STR        Address type, one of P2SH, P2PKH_UNCOMPRESSED, P2PKH, bech32, ethereum, solana, ton
+                          By default, address type is detected from the address file, if it's text.
+                          This options is required when using binary data.
+        --tt STR,STR,...  Comma-separated list of address types to search for in the -t HEX mode.
+                          When -t HEX, the address file contains hexadecimal 160-bit hashes instead of addresses.
+                          Possible values are:
+                              P2PKH: rmd160(sha256(der-encoded compressed pubkey))
+                              P2PKH_UNCOMPRESSED: rmd160(sha256(der-encoded uncompressed pubkey))
+                              P2SH: rmd160(sha256(\x00\x14 . rmd160(sha256(der-encoded compressed pubkey))))
+                              ETHEREUM: keccak(64-byte pubkey, x.y in big-endian), used also by Tron.
+                          Default: check all hash functions.
+    -S, --save FILE       Save found results to the file.
+    -m, --mnemo FILE      Read mnemonics from the file, one per line. -m stdin to read from the input pipe.
+        --alphabet FILE   Generate mnemonics as passwords from the characters of the given file.
+                          Not compatible with --mnemo option.
+        --bits INT        Generate mnemonics using RNG of the libbitcoin explorer 3.2.0. The integer number is the entropy length:
+                          64 - 6 words, 96 - 9 words, 128 - 12 words, 160 - 15 words, 192 - 18 words, 224 - 21 words
+                          256 - 24 words.
+    -e, --entropy FILE    Read entropy from the file in hex, one per line. If FILE is 'stdin', read from input pipe.
+    -l, --lang STR        Language of the mnemonics generated with --bits, one of en, es, es-nfkd, ja, ja-nfkd, it, fr, cs, ru, uk, zh_Hans, zh_Hant, po, ko, tu.
+                          Default is English.
+        --start STR       For generated mnemonics, start from this mnemonic.
+    -d, --devices STR     Comma-separated list of device indexes (indeces start with 0). By default,
+                          run on all devices.
+        --bloom NUM       Bloom filter size in GPU, in bytes. Can use K, M, and G suffixes. Default
+                          is 1024M.
+        --kernel NUL      GPU memory reserved for kernel execution, in bytes. Can use K, M, and G suffixes.
+                          Default depends on the device.
+        --ec-threads NUM  Number of threads for elliptic curve computations. Default is 128. Should be a multiplier of 32.
+                          Set to 64 if you are experiencing out of memory errors.
+    -w, --words FILE      Use custom dictionary for '*' placeholders in the mnemo template; each word in a separate text line.
+                          Each word should be a valid BIP39 word in the specified language (--lang).
+        --dump            Dumps valid mnemonics.
+    -r, --random          Randomize the mnemonics generated with MNEMO templates (see below).
+        --depth NUM       Depth of the random generator to start with. Default is 0 - start generating entoropy right after
+                          the random generator is initialized.
+        --core FILE       Read BIP39 seed from the file, one per line. If FILE is 'stdin', read from input pipe.
+        --hmac FILE       Read passwords from the file, one per line, and use them as HMAC keys to generate BIP39 seeds.
+        --hmac1 FILE      Same as --hmac but doesn't check intermediate iterations.
+        --iterations NUM  In the --hmac mode: number of hmac iterations to perform.
+        --pass FILE       Read passphrases from the file, one per line.
+        --electrum                 Use Electrum's non-standard BIP39 implementation.
+        --legacy-electrum Use Electrum's old mnemonic scheme. Only paths in the form of m/0-9/N are accepted.
+    MNEMO                 Mnemonic template, up to 24 words. Can contain placeholders '*'. If less than
+                          12 words, the rest are placeholders. Each '*' is replaced with one of 2048 words (or one of the words
                           from the dictionary specified with --words option).
 
 Example:
-   > bip39scan -a addresses.txt -p m/0'/0-1 -m mnemo.txt<br>
+   > bip39scan -a addresses.txt -p m/0'/0-1 -m mnemo.txt
    > bip39scan -a addresses.txt -p m/0'/0-1 --alphabet characters.txt --start kaaaaaaa
+```
 
- 
 ## Building on Windows VS-2022
 Install cmake 3.30+ from this link: https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-windows-x86_64.msi<br>
 Or find another version on this page: https://cmake.org/download/
