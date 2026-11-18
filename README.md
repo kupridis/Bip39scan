@@ -1,14 +1,16 @@
 ## bip39scan v 7.7.7
 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀
 
+MultiGPU program brute force mnemonic phrases<br>
+Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
+The program searches for both ETH and all types of BTC P2PKH, P2PKH_UNCOMPRESSED, P2SH, Bech32.
+A list of paths is used, and the depth is specified.
+The program supports all CUDA cards GeForce (CMP, GTX, RTX...)<br>
+
 The program is sold with the source code! cmake Visual Studio 2022 or Linux<br>
 The kit includes ready-made programs for Windows x64 and Linux (Ubuntu and hiveos)<br>
 To purchase, write to telegram @phrutis or buy 24/7 from a bot in a group https://t.me/cuda8
 
-MultiGPU program brute force mnemonic phrases<br>
-Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
-The program supports all CUDA cards GeForce (CMP, GTX, RTX...)<br>
- 
 | GPU card | 24 words | 18 words | 12 words | other brute | Mode 9 BIP32 |
 |----------|----------|----------|----------|-------------|--------------|
 | RTX 5090 | 250M mnemo/s	| 63M mnemo/s	| 16M mnemo/s | 700k entropy/s | 10M entropy/s |
@@ -22,7 +24,7 @@ For Linux (Ubuntu, hiveos) <br>
 The commands are the same as for Windows.<br>
 You need to add in patch \ before '<br>
 ```chmod +x bip39scan```<br>
-```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt "\*" hello prepare "\*" "\*" zoo "\*"...```
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt "\*" hello "\*" "\*" zoo "\*"```
 
 # MODES:
 
@@ -67,16 +69,18 @@ For Linux (Ubuntu) -r "\*" "\*" "\*" "\*" <br>
 The program reads everything from the file: phrases, passwords, passphrases, words, numbers...<br>
 There are many finds on them. Supports dictionaries up to 64 TB.
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m dict.txt```
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt```
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m dict.txt```
 <hr>
 
 ## 4. Reading phrases and passwords as a stream from an external generator
 
-```hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin```
+```hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m stdin```
 
-```py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin```
+```py generator.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m stdin```
+
+```python3 generator.py | ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m stdin```
 <hr>
 
 ## 5. Reading entropy from a text file
@@ -103,15 +107,15 @@ Special lang word NFKD (Normalization Form KD):<br>
 ```-l ja-nfkd``` Japanese<br>
 ```-l es-nfkd``` Spanish
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -e entropy.txt```
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -e entropy.txt -l ru```
 <hr>
 
 ## 6. Reading entropy stream from external generator
 Now you don't need to modify the program for the next vulnerability.<br>
 Create your own generators based on Python or C++ code.<br>
-There are many vulnerable random generators on the Internet (github).<br>
+There are many vulnerable random generators on the Internet (github)<br>
 Print the entropy in hex format, done.<br>
 The program will determine the length of the hex and create a phrase of the required length itself.<br>
 
@@ -136,10 +140,10 @@ Special lang word NFKD (Normalization Form KD):<br>
 ```-l es-nfkd``` Spanish
 
 
-```py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e stdin```
+```py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -e stdin```
 
 
-```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin```
+```python3 entropy.py | ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -e stdin```
 <hr>
 
 ## 7. Use the built-in generator passwords
@@ -153,11 +157,9 @@ You can see the list of found passwords 7165 pcs. https://github.com/kupridis/bi
 In the alpha.txt file, specify your alphabet, numbers, symbols in a line.<br>
 The generator works with an increment increasing the password length.
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --alphabet alpha.txt --start a```
 
-
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
-
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --alphabet alpha.txt --start a```
 
 Every 5 minutes the progress status is written to the file status.txt<br>
 To continue, copy the position from status.txt and run --start FromHire1<br>
@@ -187,9 +189,9 @@ Vulnerability 32 bits in each phrase length, in each language from the list. <br
 Also several patches + different coins. This is for years of searching. <br>
 There are finds with a positive balance<br>
 
-[View 27 finds BTC with positive balance https://github.com/phrutis/bip39scan/blob/main/Founds.md
+[View 27 finds BTC with positive balance https://github.com/cupridis/bip39scan/blob/main/Founds.md
 
-[Download all empty finds CSV FOUNDS.txt (219к phrases) https://github.com/phrutis/bip39scan/releases/download/4.0.1/FOUNDS.txt
+[Download all empty finds CSV FOUNDS.txt (219к phrases) https://github.com/kupridis/bip39scan/releases/download/4.0.1/FOUNDS.txt
 
 Unix timestamp range (from January 1, 1970, to January 19, 2038).<br>
 date/time: 1970-01-01 00:00:00 for first timestamp. If chosen english ETH addresses pach m/44'/60'/0'/0/0-9<br>
@@ -208,9 +210,11 @@ Length of phrases<br>
 ```--bits 224``` (random phrase 21 words)<br>
 ```--bits 256``` (random phrase 24 words)<br>
 
-``` bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256``` 
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --bits 256``` 
 
-``` bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 128``` 
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --bits 192``
+
+```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --bits 128```
 
 Phrase Languages<br>
 If not specified, the default will be en<br>
@@ -237,7 +241,7 @@ Special lang word NFKD (Normalization Form KD):<br>
 <img width="976" height="370" alt="Image" src="https://github.com/user-attachments/assets/e787746a-1646-428c-9865-d62ff85baf66" />
 
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 192 -l tu```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --bits 192 -l tu```
 
 
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it```
@@ -247,11 +251,6 @@ Special lang word NFKD (Normalization Form KD):<br>
 This mode uses hmac_sha512 + salt "Bitcoin seed"<br>
 Designed to search for old Bitcoin core and other old BIP32 wallets.<br>
 You can make a seed generator https://github.com/hackerschoice/thc-btc-rng-bruteforce based on the old and vulnerable openssl-0.9.8c library https://openssl-library.org/source/old/0.9.x/<br>
-This generator https://github.com/abdielsudiro/openssl-entropy was used to create keys and seeds https://cryptodeeptech.ru/vulnerable-openssl/ for the first Bitcoin clients.<br>
-Satoshi Nakamoto himself generated keys on this generator!<br>
-Ex. from founds: 50 BTC (19 jan 2009)<br>
-Adr: 1NChfewU45oy7Dgn51HwkBFSixaTnyakfj https://blockchair.com/ru/bitcoin/address/1NChfewU45oy7Dgn51HwkBFSixaTnyakfj/events/bitcoin-main/1?order=#app-gallery<br>
-Key: 5KGLRScL6BqRkWnB8kTtoJmj21GT2W4KHpHJ2AA6vewuqM3tFVM
 
 Recommendations:<br>
 1. Using 256 bit hashes for searching.<br>
@@ -271,15 +270,15 @@ m/0'/0'/0-5'
 
 Reading entropy from file
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core entropy.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --core entropy.txt```
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core entropy.txt```
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --core entropy.txt```
 
 Receiving entropy from an external generator
 
-```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core stdin```
+```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --core stdin```
 
-```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core stdin```
+```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --core stdin```
 
 Example founds:
 
@@ -318,18 +317,18 @@ Use multipatch ```--pp listpathes.txt```
 
  ## Reading passwords from file
 
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --hmac1 passwords.txt --iterations 50000```
 
 
-```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 passwords.txt --iterations 50000```
+```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --hmac1 passwords.txt --iterations 50000```
 
 
 #### Receiving passwords from an external generator
 
-```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000```
+```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --hmac1 stdin --iterations 50000```
 
 
-```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --hmac1 stdin --iterations 50000```
+```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt --hmac1 stdin --iterations 50000```
 
 
 Example FOUNDS:
@@ -357,19 +356,19 @@ In fact, the password is appended to the "mnemonic" salt.
 ### Passphrases search supports the following modes:
 
 Mode 3 - Reading seed phrases from a text file (Many finds)<br>
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m phrases.txt --pass passwords.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m phrases.txt --pass passwords.txt```
 
 Mode 4 - Reading phrases as a stream from an external generator<br>
-```py gen_phrases.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin --pass passwords.txt```
+```py gen_phrases.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -m stdin --pass passwords.txt```
 
 Mode 5 - Reading entropy from a text file<br>
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt --pass passwords.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt -e entropy.txt --pass passwords.txt```
 
 Mode 6 - Reading entropy stream from external generator<br>
-```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin --pass passwords.txt```
+```py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp path.txt -e stdin --pass passwords.txt```
 
 Mode 8 - Vulnerable generator libbitcoin explorer v3.2<br>
-```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256 --pass passwords.txt```
+```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp path.txt --bits 256 --pass passwords.txt```
 
 Example FOUNDS:
 
@@ -389,32 +388,34 @@ Example FOUNDS:
 
 <hr>
 
+# Bip39scan v9.9.1
+
 ## 13. Solana and TON
 
-Solana: два режима. обычный bip32 режим (современный) и legacy-режим (путь 'm'). <br>
-Т.е. когда путь m - работает старая деривация, а не bip32 деривация. Нужно передать -t solana.<br>
-TON: тоже два режима. Первый - tonlib, стандартная тоновская деривация, которая не bip39 и не bip32. <br>
-Путей там нет, поэтому этот режим включается отдельным флагом --tonlib: 
+Solana: two modes—standard BIP32 (modern) and legacy mode (path 'm'). <br>
+In other words, when the path is 'm', the legacy derivation method is used instead of standard BIP32 derivation. You must specify `-t solana`. <br>
+TON: also has two modes. The first is `tonlib`, the standard TON derivation method, which is neither BIP39 nor BIP32. <br>
+Since there are no paths in this mode, it is enabled using a separate flag, `--tonlib`:
 
 ```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib```
 
 ```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt --tonlib --pass pwd.txt```
 
-Второй режим - ed25519 деривация с bip39/bip32, которая есть в некоторых кошельках, например trezor и ledger. <br>
-Этот режим включается опцией -t ton, например:
+The second mode is ED25519 derivation based on BIP39/BIP32, which is used by certain wallets, such as Trezor and Ledger. <br>
+This mode is enabled via the `-t ton` option, for example:
 
 ```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt```
 
 ```bip39scan.exe -a ton-pubkeys.txt -m phrases.txt -t ton --pp paths.txt --pass pwd.txt```
 
-где paths.txt содержит например:<br>
+where `paths.txt` might contain, for example: <br>
 m/44'/607'/0'/0-10'/0-10'<br>
 m<br>
 m/0-1'
 
-И solana, и ton поддерживают только hardened деривацию, т.е. пути с '
+Both Solana and TON support only hardened derivation (i.e., paths containing the `'` symbol). <br>
 
---tonlib очень медленный - 100000 итераций
+The `--tonlib` mode is very slow—it involves 100,000 iterations.
 
 <hr>
 
@@ -424,7 +425,6 @@ m/0-1'
 
 Mnemonics must contain valid BIP39 words, otherwise there will be an error.
 
-
 # Other sections:
 
 ## Download ready-made address databases for bip39scan
@@ -433,13 +433,14 @@ ALL ETH + ALL TOKENS + ALL BTC + history = 2.775.909.490 addresses<br>
 Doesn't start on 12 GB cards!!! The database fits on a 16 GB card or more!!! <br>
 To run you need 52 GB of RAM <br>
 Add these arguments to run --bloom 8192M -t HEX<br>
-Download http://95.215.108.160/up/allcoins.bin  (53 GB)
+Download https://t.me/cuda8  (53 GB)
 
 ALL BTC addresses 1... P2PKH with balance + empty (history)<br>
 Add these arguments to run --bloom 4096M -t P2PKH<br>
-Download http://95.215.108.160/up/allbtc1.bin (11.9 GB)
+Download https://t.me/cuda8 (11.9 GB)
 
-
+You can search for one type of address. <br>
+The results will contain addresses instead of 160-bit hashes.<br>
 ```bip39scan.exe --save Found.txt -a btc1.txt -t P2PKH -p m/44'/0'/0'/0/0-9 --bits 256```<br>
 ```bip39scan.exe --save Found.txt -a btc3.txt -t P2SH -p m/49'/0'/0'/0/0-9 --bits 256```<br>
 ```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 -p m/84'/0'/0'/0/0-9 --bits 256```<br>
@@ -509,7 +510,7 @@ It takes 1,000,000 passwords, makes iterations and does not check the seed until
 Your speed is 60k<br>
 1000000/60000 = it will take you 15 seconds to check<hr>
 
-The program doesn't start for me and doesn't display bip39scan -h
+**The program doesn't start for me and doesn't display bip39scan -h**
 
 There is no OpenCL on your PC!<br>
 Install the required library:<br>
@@ -526,7 +527,7 @@ aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH_UNCOMPRESSED)<br>
 aa6b6bdfc262fe316db3c83aec84177b750d985a(P2PKH) - Address 1.. or see path if m/84.. bc..<br>
 71fc5be17c98a1e6018be06d1dfe8f41eafee51e(P2SH)<br>
 Use a quick script to generate addresses from private keys<br>
-py gen_address.py or python3 gen_address.py<br>
+py priv-adr.py or python3 priv-adr.py<br>
 Paste the found private key<br>
 <hr>
 
@@ -548,34 +549,24 @@ m/0/0/0-9<br>
 m/0-99/0-99/0-99<br>
 m/44'/0-99'/0'/0/0-9<br>
 m/0-99'/0-99'/0'/0-5/0-999<br>
-max value: 2147483647<br>
-Where is ' - max value: 4294967296<br>
-m/44'/0-4294967296'/0-4294967296'/0-2147483647/0-2147483647<hr>
-
-Tell me patches of different coins
-
-[Full list of patches BIP32, BIP39](https://github.com/phrutis/bip39scan/blob/main/Patches.md)<hr>
+max value: 2147483646
+<hr>
 
 **How to create a patch file?**
 
-Create a text file and rename it, for example, to pathes.txt<br>
+Create a text file and rename it, for example, to p1.txt<br>
 Insert the list of required paths on a new line.<br>
 m/44'/60'/0'/0/0-9<br>
 m/44'/0'/0'/0-1/0-9<br>
 m/49'/0'/0'/0/0-9<br>
 m/84'/0'/0'/0/0-9<br>
-USE --pp pathes.txt<br>
+USE --pp p1.txt<br>
 <hr>
 
 **Why do we need streams, generators?** <br>
 How does it work? Show an example.
 
-Most random generators are vulnerable.<br>
-If you have the knowledge to write code.cu to embed a generator, you wouldn't ask such a question.<br>
-Even if you have such knowledge, it's easier and faster to write a three-line python code, done!<br>
-Changing the program for each generator is not rational.<br>
-It's easier to find a phrase by vulnerability than to endlessly brute-force emptiness.<br>
-[Examples of generators](https://github.com/phrutis/bip39scan/blob/main/Generators/README.md)<hr>
+Ask the AI ​​— it will build a generator entropy.<hr>
 
 **I don't understand what entropy is?**
 
@@ -602,13 +593,14 @@ Base.bin 50 GB+ specify --bloom 8192M<hr>
 
 This is a table of acceleration, pre-calculated points of the curve<hr>
 
-Words and letters from the previous generation remain (stick) in my window, how can I fix it?
+**Words and letters from the previous generation remain (stick) in my window, how can I fix it?**
 
 Languages or some characters may also be displayed incorrectly. <br>
 These are properties of the correction and different language encodings.<br>
 This does not affect the brute force process itself.<hr>
 
-What mode is better to search in? Where are there more prospects? Where and how much did you find?
+**What mode is better to search in? Where are there more prospects?<br> 
+Where and how much did you find?**
 
 Try different modes and directions.<br>
 Search in the one in which you think you have the best chance of finding.<br>
