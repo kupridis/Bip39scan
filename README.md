@@ -36,9 +36,6 @@ For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"
 
 In the phrase, 3 missing words in different positions are replaced by * (test address 14aZB9i8NFiXpeGbS3g7vLArhL7EbNBSWS)
 
-Video https://github.com/user-attachments/assets/e8d4535c-ea78-410f-8ec9-2608847ce975
-
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt cause ensure shield option monkey infant tray okay remember * * *```
 
 
@@ -82,14 +79,9 @@ Read the question and answer at the bottom of the page<br>
 For Linux (Ubuntu) -r "\*" "\*" "\*" "\*" <br>
 Ex. ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*" "\*"```
 
-![Image](https://github.com/user-attachments/assets/18393117-eaff-4a81-9eac-46d327207903)
-
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
 
-
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *```
-
 <hr>
 
 ## 3. Reading phrases and passwords from a text file
@@ -98,20 +90,14 @@ There are many finds on them. Supports dictionaries up to 64 TB.
 
 https://github.com/user-attachments/assets/b981b17f-db42-41a7-adb8-3b6dc7d73803
 
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m dict.txt```
-
 
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m dict.txt```
 <hr>
 
 ## 4. Reading phrases and passwords as a stream from an external generator
 
-https://github.com/user-attachments/assets/5d930d3d-4224-4316-8f8f-87a721e21ec8
-
-
 ```hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -m stdin```
-
 
 ```py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin```
 <hr>
@@ -140,9 +126,7 @@ Special lang word NFKD (Normalization Form KD):<br>
 ```-l ja-nfkd``` Japanese<br>
 ```-l es-nfkd``` Spanish
 
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e entropy.txt```
-
 
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt```
 <hr>
@@ -175,9 +159,6 @@ Special lang word NFKD (Normalization Form KD):<br>
 ```-l es-nfkd``` Spanish
 
 
-https://github.com/user-attachments/assets/df8a0774-307a-46e0-ac01-b9123aad5c50
-
-
 ```py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -e stdin```
 
 
@@ -195,22 +176,16 @@ You can see the list of found passwords 7165 pcs. https://github.com/kupridis/bi
 In the alpha.txt file, specify your alphabet, numbers, symbols in a line.<br>
 The generator works with an increment increasing the password length.
 
-https://github.com/user-attachments/assets/d0fc2faa-b0bb-4f7b-8c4e-575972a0cb26
-
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
 
 
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --alphabet alpha.txt --start a```
 
 
-https://github.com/user-attachments/assets/313156e0-d82e-499d-a5c0-644e067d76cd
-
 Every 5 minutes the progress status is written to the file status.txt<br>
 To continue, copy the position from status.txt and run --start FromHire1<br>
-If there is a space in the start word, run it like this --start "From Hire 1"
-
-Important! The symbols from the starting position must be present in the alphabet.
+If there is a space in the start word, run it like this --start "From Hire 1"<br>
+The symbols from the starting position must be present in the alphabet.
 <hr>
 
 ## 8. Vulnerable generator libbitcoin explorer v3.2
@@ -230,8 +205,6 @@ After that, the program again goes through 32 bits of entropy but with greater d
 Then, the third, fourth ... the program searches indefinitely.<br>
 No one has used this method! <br>
 There are finds with a positive balance for it.
-
-https://github.com/user-attachments/assets/8c33254d-46a7-4570-a9e4-3d6d39d87693
 
 Vulnerability 32 bits in each phrase length, in each language from the list. <br>
 Also several patches + different coins. This is for years of searching. <br>
@@ -258,12 +231,9 @@ Length of phrases<br>
 ```--bits 224``` (random phrase 21 words)<br>
 ```--bits 256``` (random phrase 24 words)<br>
 
+``` bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256``` 
 
-bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --bits 256
-
-
-bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 128
-
+``` bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 128``` 
 
 Phrase Languages<br>
 If not specified, the default will be en<br>
@@ -324,21 +294,15 @@ m/0'/0'/0-5'
 
 Reading entropy from file
 
-
 ```bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core entropy.txt```
 
-
 ```bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core entropy.txt```
-
-
 
 Receiving entropy from an external generator
 
 ```py gen.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --core stdin```
 
-
 ```py generate.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --core stdin```
-
 
 Example founds:
 
