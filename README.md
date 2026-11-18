@@ -108,6 +108,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
 
 <hr>
+
 ## 3. Reading phrases and passwords from a text file
 The program reads everything from the file: phrases, passwords, passphrases, words, numbers...<br>
 There are many finds on them. Supports dictionaries up to 64 TB.
