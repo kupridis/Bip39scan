@@ -41,9 +41,9 @@ You need to add in patch \ before '<br>
 chmod +x bip39scan<br>
 ./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...
 
-## MODES:
+# MODES:
 
-### 1. Sequential search words:<br>
+## 1. Sequential search words:<br>
 Replace unknown words with \*<br>
 Standard random 2048 words in positions with \*<br>
 For Linux (Ubuntu) "\*" words "\*" "\*" zoo "\*"  
@@ -66,7 +66,7 @@ You can use your own list of words from a text file for searching. Only words fr
 Words in the file must be on a new line. To add a specified list, use -w words.txt Replace unknown words with *
 
 <hr>
-### 2. Random search words:
+## 2. Random search words:
 
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt -w mywordlist.txt -r uncover figure script * obscure waste * quit depend bachelor trust erupt * impose brave leave number rapid oak * reopen * noodle tragic
 
@@ -108,7 +108,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -r * * * * * * * * * * * *
 
 <hr>
-### 3. Reading phrases and passwords from a text file:<br>
+## 3. Reading phrases and passwords from a text file:<br>
 The program reads everything from the file: phrases, passwords, passphrases, words, numbers...<br>
 There are many finds on them. Supports dictionaries up to 64 TB.
 
@@ -133,7 +133,7 @@ hashcat.exe --stdout -a 3 -1 ?u?l ?1?l?l?l?d?d?d?d | bip39scan.exe -a allcoins.b
 py generator.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -m stdin
 
 <hr>
-### 5. Reading entropy from a text file<br>
+## 5. Reading entropy from a text file<br>
 Entropy must be in hex format with a new line.<br>
 Depending on the length of the hash, a phrase is created.
 
@@ -164,7 +164,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e entropy.txt
 
 <hr>
-### 6. Reading entropy stream from external generator<br>
+## 6. Reading entropy stream from external generator<br>
 Now you don't need to modify the program for the next vulnerability.<br>
 Create your own generators based on Python or C++ code.<br>
 There are many vulnerable random generators on the Internet (github).<br>
@@ -201,7 +201,7 @@ py entropy.py | bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.
 py entropy.py | bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt -e stdin
 
 <hr>
-### 7. Use the built-in generator passwords<br>
+## 7. Use the built-in generator passwords<br>
 In 2015-2016, there was an online service live.ether where everyone could generate addresses using passwords.<br>
 At first https://live.ether.camp they generated from camp 2031 iteration of SHA-3 (Keccak)<br>
 then switched to a more secure generation of pbkdf2_hmac_sha512 2048 iterations.<br>
@@ -231,7 +231,7 @@ Important! The symbols from the starting position must be present in the alphabe
 
 
 <hr>
-### 8. Vulnerable generator libbitcoin explorer v3.2<br>
+## 8. Vulnerable generator libbitcoin explorer v3.2<br>
 More about the vulnerability Milk Sad:<br>
 RU https://habr.com/ru/articles/771980/<br>
 EN https://milksad.info<br>
@@ -314,7 +314,7 @@ bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathsli
 bip39scan.exe -a hex160.bin -t HEX --bloom 2048M --save Found.txt --pp pathslist.txt --bits 256 -l it
 
 <hr>
-### 9. BIP32<br>
+## 9. BIP32<br>
 This mode uses hmac_sha512 + salt "Bitcoin seed"<br>
 Designed to search for old Bitcoin core and other old BIP32 wallets.<br>
 You can make a seed generator https://github.com/hackerschoice/thc-btc-rng-bruteforce based on the old and vulnerable openssl-0.9.8c library https://openssl-library.org/source/old/0.9.x/<br>
@@ -368,7 +368,7 @@ Example founds:
 
 
 <hr>
-### 10. BIP32 Brute bip32.org passwords
+## 10. BIP32 Brute bip32.org passwords
 
 The bip32.org website has been generating Bitcoin addresses from passwords for over 12 years.<br>
 Protection against password brute-force is implemented in the form of 50,000 iterations of the hmac_sha256 password.<br>
@@ -425,7 +425,7 @@ Example FOUNDS:
 
 
 <hr>
-### 11. Search for Passphrases to Seed Phrases<br>
+## 11. Search for Passphrases to Seed Phrases<br>
 <img width="1251" height="983" alt="Image" src="https://github.com/user-attachments/assets/7c091ae2-24a8-4833-a549-300fc6f3f433" /><br>
 This mode checks the specified list of passphrases (passwords) for each phrase.<br>
 Argument --pass dict.txt (passwords on a new line)<br>
@@ -459,7 +459,7 @@ Example FOUNDS:
 
 
 <hr>
-### 12. Electrum
+## 12. Electrum
 
 bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v1.txt -p m/0-1/0-9 --legacy-electrum -m ELECTRUM_OLD_phrases.txt
 
@@ -467,7 +467,7 @@ bip39scan.exe -a allcoins.bin-t HEX --bloom 8192M --save Found_ELECTRUM_v2.txt -
 
 
 <hr>
-### 13. Solana and TON
+## 13. Solana and TON
 
 Solana: два режима. обычный bip32 режим (современный) и legacy-режим (путь 'm'). <br>
 Т.е. когда путь m - работает старая деривация, а не bip32 деривация. Нужно передать -t solana.<br>
@@ -496,7 +496,7 @@ m/0-1'
 
 
 <hr>
-### 14. Permutation
+## 14. Permutation
 
 bip39scan.exe -a allcoins.bin -t HEX --bloom 8192M --pp paths.txt --permute -m phrases.txt
 
