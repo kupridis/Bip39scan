@@ -1,27 +1,13 @@
-## bip39scan - New reliase v 9.9.1 (18/02/2026)<br>
+## bip39scan - New reliase v 9.9.2 (19/11/2026)
 🚀 The fastest brute force mnemonics MultiGPU program in the world! 🚀
 
-Official store of the program https://t.me/cuda8
-
-**bip39scan v9.9.1 New add:**
-
-MODE 12<br>
-1. electrum v1<br>
-2. electrum v2
-
-MODE 13<br>
-1. Solana<br>
-2. TON<br>
-3. tonlib
-
-MODE 14<br>
-1. reads phrases from a file, rearranges words, checks the validity of phrases. --permute -m phrases.txt
-
+The program is sold with the source code! cmake Visual Studio 2022 or Linux<br>
+The kit includes ready-made programs for Windows x64 and Linux (Ubuntu and hiveos)<br>
+To purchase, write to telegram @phrutis or buy 24/7 from a bot in a group https://t.me/cuda8
 
 MultiGPU program brute force mnemonic phrases<br>
 Supports brute force 6, 9, 12, 15, 18, 21, 24 words<br>
 The program supports all CUDA cards GeForce (CMP, GTX, RTX...)<br>
-Supports multi patch and rmd160 hashes.
  
 | GPU card | 24 words | 18 words | 12 words | other brute | Mode 9 BIP32 |
 |----------|----------|----------|----------|-------------|--------------|
@@ -31,9 +17,6 @@ Supports multi patch and rmd160 hashes.
 * If you reduce the number of addresses checked, the speed will be higher.<br>
 * The size of the address base does not affect the speed +-5%
 
-The program is sold with the source code! cmake Visual Studio 2022 or Linux<br>
-The kit includes ready-made programs for Windows x64 and Linux (Ubuntu and hiveos)<br>
-To purchase, write to telegram @phrutis or buy 24/7 from a bot in a group https://t.me/cuda8
 
 For Linux (Ubuntu, hiveos) <br>
 The commands are the same as for Windows.<br>
