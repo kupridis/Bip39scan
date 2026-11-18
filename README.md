@@ -750,7 +750,7 @@ In cmd run:
 
 cmake bip39scan
 
-<img width="979" height="556" alt="Image" src="https://github.com/user-attachments/assets/584e0fc1-3ad5-49ef-8498-dca4a3f03538" />
+<img width="1606" height="940" alt="cmake" src="https://github.com/user-attachments/assets/0b67c082-76bc-41ff-a2ef-008ec7e18581" />
 
 The project files will appear in the folder:<br>
 bip39scan.sln <- run this file the project will open<br>
