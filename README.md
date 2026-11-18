@@ -768,7 +768,7 @@ Visual Studio 2022 opens. In the top toolbar choose: Release/x64.<br>
 In the "Solution explorer" to the right, right-click bip39scan, choose "build".<br>
 The executable builds in the your-build-directory\Release
  
-<img width="1303" height="1039" alt="Image" src="https://github.com/user-attachments/assets/b2dcf48f-37e4-4e8d-89f6-f9892f571bc9" />
+<img width="3303" height="2065" alt="vs2022" src="https://github.com/user-attachments/assets/0188aae2-c9f2-4828-8601-7797b58bdeea" />
 
 If necessary run precomp.exe file precomp.bin will be generated
 
