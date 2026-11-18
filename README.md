@@ -21,7 +21,7 @@ The program supports all CUDA cards GeForce (CMP, GTX, RTX...)<br>
 For Linux (Ubuntu, hiveos) <br>
 The commands are the same as for Windows.<br>
 You need to add in patch \ before '<br>
-chmod +x bip39scan<br>
+```chmod +x bip39scan```<br>
 ```./bip39scan -a allcoins.bin -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt ...```
 
 # MODES:
@@ -407,7 +407,7 @@ Example FOUNDS:
 <hr>
 
 ## 11. Search for Passphrases to Seed Phrases
-<img width="1251" height="983" alt="Image" src="https://github.com/user-attachments/assets/7c091ae2-24a8-4833-a549-300fc6f3f433" /><br>
+
 This mode checks the specified list of passphrases (passwords) for each phrase.<br>
 Argument --pass dict.txt (passwords on a new line)<br>
 Some call this the 13th, 25th word.<br>
@@ -557,19 +557,19 @@ BTC<br>
 ```bip39scan.exe --save Found.txt -a btc-bc.txt -t bech32 --save-bin bc.bin --bloom 2048M --pp pathslist.txt --bits 256```<br>
 
 ETH and tokens<br>
-bip39scan.exe --save Found.txt -a eth_addresses.txt --save-bin eth.bin -t ethereum --bloom 4096M --pp pathslist.txt --bits 256
+```bip39scan.exe --save Found.txt -a eth_addresses.txt --save-bin eth.bin -t ethereum --bloom 4096M --pp pathslist.txt --bits 256```
 
 HEX base 160<br>
 Hashes160 must be on a new line in text format!<br>
-bip39scan.exe -a hashes160.txt -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --save-bin new_hex160.bin --bits 256
+```bip39scan.exe -a hashes160.txt -t HEX --bloom 8192M --save Found.txt --pp pathslist.txt --save-bin new_hex160.bin --bits 256```
 
-Text file more 12 GB USE --bloom 2048M<br>
-Text file more 50 GB USE --bloom 4096M<br>
-Text file more 120 GB USE --bloom 8192M
+Text file more 12 GB USE ```--bloom 2048M```<br>
+Text file more 50 GB USE ```--bloom 4096M```<br>
+Text file more 120 GB USE ```--bloom 8192M```
 
 Next launches run like this! <br>
-bip39scan.exe --save Found.txt -a allcoins.bin -t HEX --bloom 8192M --pp pathslist.txt --bits 256<br>
-bip39scan.exe --save Found.txt -a hex160.bin -t HEX --bloom 2048M --pp pathslist.txt --bits 256
+```bip39scan.exe --save Found.txt -a allcoins.bin -t HEX --bloom 8192M --pp pathslist.txt --bits 256```<br>
+```bip39scan.exe --save Found.txt -a hex160.bin -t HEX --bloom 2048M --pp pathslist.txt --bits 256```
 
 ```bip39scan.exe --save Found.txt -a btc1.bin -t P2PKH --bloom 2048M --pp pathslist.txt --bits 256```<br>
 ```bip39scan.exe --save Found.txt -a btc3.bin -t P2SH --bloom 2048M --pp pathslist.txt --bits 256```<br>
