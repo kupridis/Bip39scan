@@ -189,10 +189,6 @@ Vulnerability 32 bits in each phrase length, in each language from the list. <br
 Also several patches + different coins. This is for years of searching. <br>
 There are finds with a positive balance<br>
 
-[View 27 finds BTC with positive balance https://github.com/cupridis/bip39scan/blob/main/Founds.md
-
-[Download all empty finds CSV FOUNDS.txt (219к phrases) https://github.com/kupridis/bip39scan/releases/download/4.0.1/FOUNDS.txt
-
 Unix timestamp range (from January 1, 1970, to January 19, 2038).<br>
 date/time: 1970-01-01 00:00:00 for first timestamp. If chosen english ETH addresses pach m/44'/60'/0'/0/0-9<br>
 it will generate "milk sad ..." mnemonic<br>
